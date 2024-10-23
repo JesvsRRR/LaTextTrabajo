@@ -1,0 +1,255 @@
+\newpage
+\section{Marco teórico}
+
+
+\vspace{0.5cm}
+
+\subsection{Los 7 algoritmos de ordenamiento en pseudocodigo}
+Los algoritmos de ordenamiento constituyen una parte fundamental de las ciencias de la computación, siendo procesos sistemáticos diseñados para organizar elementos en una secuencia específica, típicamente en orden ascendente o descendente. La importancia de estos algoritmos radica en su aplicación ubicua en el procesamiento de datos y su rol crucial en la optimización de búsquedas y otras operaciones computacionales.
+
+\vspace{2.5cm}
+
+\begin{algorithm}
+\caption{Pseudocodigo Bubble Sort}
+\label{alg:label}
+\begin{algorithmic}
+\Function {bubblesort}{\textit{array[]},\textit{ n}}
+\State $n \gets length(array)$
+\For {$i = 0  \hspace{0.2cm} to \hspace{0.1cm} (n - 1)$}
+\For {$j = 0  \hspace{0.2cm} to \hspace{0.1cm} (n - 1 - i)$}
+\If {$array[j] > array \hspace{0.1cm}[j + 1]$}
+\State $temp \gets array \hspace{0.1cm}[j + 1]$
+\State $array \hspace{0.1cm}[j]\gets array \hspace{0.1cm} [j + 1]$
+\State $array \hspace{0.1cm}[j+1]\gets temp$
+\EndIf
+\EndFor
+\EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+\begin{algorithm}
+\caption{Pseudocodigo Selection Sort}
+\label{alg:label}
+\begin{algorithmic}
+\Function {selectionsort}
+{\textit{array[]},\textit{ n}}
+\State $n \gets length(array)$
+
+\For {$i = 0  \hspace{0.2cm} to \hspace{0.1cm} n$}
+\State $menor \gets i$
+\For {$j = i + 1  \hspace{0.2cm} to \hspace{0.1cm} n$}
+\If {$array[j] < array \hspace{0.1cm}[menor]$}
+
+\State $menor \gets j$
+\EndIf
+
+\EndFor
+
+\EndFor
+\State $temp \gets array[menor]$
+\State $array[menor] \gets array[i]$
+\State $array[i] \gets temp$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Pseudocodigo Insertion Sort}
+\label{alg:label}
+\begin{algorithmic}
+\Function {insertionsort}
+{\textit{array[]},\textit{ n}}
+\State $n \gets length(array)$
+
+\For {$i = 0  \hspace{0.2cm} to \hspace{0.1cm} (n - 1)$}
+
+\For {$j = 0  \hspace{0.2cm} to \hspace{0.1cm} i$}
+\If {$array[i] < array \hspace{0.1cm}[j]$}
+
+\State $cambia \gets array[i]$
+\State $array[i] \gets array[j]$
+\State $array[j] \gets cambia$
+\EndIf
+
+\EndFor
+
+\EndFor
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+
+\begin{algorithm}
+\vspace{1cm}
+\caption{Pseudocodigo Counting Sort}
+\label{alg:label}
+\begin{algorithmic}
+\Function {countingsort}
+{\textit{array[]},\textit{ n}}
+\State $n \gets length(array)$
+\State $count \gets array[n] de 0$
+\State $output \gets array[n]$
+
+\For {$i = 0  \hspace{0.2cm} to \hspace{0.1cm} n - 1$}
+\State $j \gets key(input[i])$
+\State $count[j] \gets count[j] + 1$
+\EndFor
+\vspace{0.2cm}
+
+\For {$i = 1  \hspace{0.2cm} to \hspace{0.1cm} n$}
+\State $count[i] \gets count[i] + count[i - 1]$
+\EndFor
+\vspace{0.2cm}
+\For {$i = 0  \hspace{0.2cm} to \hspace{0.1cm} n - 1$ \textbf{down to 0} }
+\State $j \gets key(input[i])$
+\State $count[j] \gets count[j] - 1$
+\State $output[count[j]] \gets input[i]$
+\EndFor
+
+\textbf{return} output
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Pseudocodigo Heap Sort}
+\label{alg:label}
+\begin{algorithmic}
+\Function {heapify}
+{\textit{array[]},\textit{ n},\textit{ i}}
+\State $n \gets length(array)$
+\State $max \gets i$
+\State $lchild \gets 2i + 1$
+\State $rchild \gets 2i + 2$
+
+
+\If {$(lchild <= n \hspace{0.1cm} ) \And (array[i] < array[lchild])$}
+
+\vspace{0.2cm}
+\State $max \gets lchild$
+
+\Else 
+\State $max \gets i$
+\EndIf
+\If {$(rchild <= n \hspace{0.1cm} ) \And (array[max] < array[rchild])$}
+\State $max \gets rchild$
+\EndIf
+\If {$max != i$}
+\State $\textbf{swap(array[i], array[max])}$
+\State  $\textbf{Heapify(A, n, max)}$
+\EndIf
+
+\EndFunction
+\vspace{0.5cm}
+\Function {heapify}
+{\textit{array[]}}
+
+\State $n \gets length(array)$
+
+\For {$i = n/2\hspace{0.1cm} downto\hspace{0.1cm} 1$}
+\State  $\textbf{Heapify(A, n, i)}$
+\EndFor
+\For {$i = n\hspace{0.1cm} downto\hspace{0.1cm} 2$}
+\State $exchange array[1] with array[i]$
+\State $array.heapsize \gets  array.heapsize
+ - 1$
+\State  $\textbf{Heapify(A, i, 0)}$
+\EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+
+\begin{algorithm}
+\caption{Pseudocodigo Merge Sort}
+\begin{algorithmic}
+\Function{mergesort}{\textit{array[]},\textit{ left},\textit{ right}}
+    \If{$left < right$}
+        \State mid $\gets \left( \text{left} + \text{right} \right) / 2$
+        \State $mergesort(A, left, mid)$
+        \State $mergesort(A, mid + 1, right)$
+        \State $merge(A, left, mid, right)$
+    \EndIf
+\EndFunction
+\vspace{0.5cm}
+\Function{merge}{\textit{array[]},\textit{ left},\textit{ mid}, \textit{ right}}
+    \State $n1 \gets mid - left + 1$
+    \State $n2 \gets right - mid$
+    \State $Create arrays L[0..n1-1] and R[0..n2-1]$
+
+    \For{$i = 0 \To n1 - 1$}
+        \State L[i] $\gets$ A[left + i]
+    \EndFor
+    \For{$j = 0 \To n2 - 1$}
+        \State $R[j] \gets A[mid + 1 + j]$
+    \EndFor
+
+    \State i $\gets$ 0, j $\gets$ 0, k $\gets$ left
+    \While{$i < n1 \And j < n2$}
+        \If{$L[i] \leq R[j]$}
+            \State $A[k] \gets L[i]$
+            \State $i \gets i + 1$
+        \Else
+            \State $A[k] \gets R[j]$
+            \State $j \gets j + 1$
+        \EndIf
+        \State $k \gets k + 1$
+    \EndWhile
+
+    \While{$i < n1$}
+        \State $A[k] \gets L[i]$
+        \State $i \gets i + 1$
+        \State $k \gets k + 1$
+    \EndWhile
+
+    \While{$j < n2$}
+        \State $A[k] \gets R[j]$
+        \State $j \gets j + 1$
+        \State $k \gets k + 1$
+    \EndWhile
+\EndFunction
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Pseudocodigo Quick Sort}
+\label{alg:label}
+\begin{algorithmic}
+\Function {quicksort}
+{\textit{array[]},\textit{ ini},\textit{ fin}}
+
+\If{inicio < fin}
+        \State pivote $\gets$ arr[inicio]
+        \State $i \gets inicio + 1$
+        \State $j \gets fin$
+
+        \While{i $\leq$ j}
+            \While{i $\leq$ j \textbf{and} arr[i] $\leq$ pivote}
+                \State $i \gets i + 1$
+            \EndWhile
+            \While{i $\leq$ j \textbf{and} arr[j] $>$ pivote}
+                \State $j \gets j - 1$
+            \EndWhile
+            \If{i $<$ j}
+                \State temp $\gets$ arr[i]
+                \State arr[i] $\gets$ arr[j]
+                \State arr[j] $\gets$ temp
+            \EndIf
+        \EndWhile
+        
+        \State temp $\gets$ arr[inicio]
+        \State arr[inicio] $\gets$ arr[j]
+        \State arr[j] $\gets$ temp
+
+        \State \Call{quickSort}{arr, inicio, j - 1}
+        \State \Call{quickSort}{arr, j + 1, fin}
+    \EndIf
+
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+

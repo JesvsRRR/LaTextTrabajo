@@ -1,0 +1,427 @@
+\newpage
+
+
+
+
+
+
+\section{Metodología}
+
+\subsection{Revisión de literatura}
+
+\begin{itemize}
+    \item  Bubble Sort:
+    Es uno de los algoritmos de ordenamiento más básicos y fundamentales en ciencias de la computación. Su nombre deriva de la forma en que los elementos "flotan" hacia sus posiciones correctas durante el proceso de ordenamiento, similar a burbujas subiendo a la superficie del agua.El algoritmo se basa en el principio de comparación e intercambio de elementos adyacentes. Opera realizando múltiples pasadas a través de una lista, comparando pares de elementos consecutivos y realizando intercambios cuando es necesario.
+    \item Selection Sort:
+    Es un algoritmo de ordenamiento que se destaca por su simplicidad conceptual y su planteamiento intuitivo. Su nombre proviene de su operación principal: la selección repetida del elemento mínimo del array no ordenado.El algoritmo se divide en dos partes: Una sublista ordenada que se construye de izquierda a derecha y una sublista no ordenada que contiene los elementos restantes.
+    \item Insertion Sort:
+    Se trata de un algoritmo trabaja de manera similar a cómo las personas ordenan cartas de juego en sus manos: Se toma una carta nueva, las comparamos con las cartas que ya tenemos ordenadas y la insertamos en su posición correcta de la lista.
+    \item Counting Sort:
+    Es un algoritmo de ordenamiento no comparativo que opera contando el número de ocurrencias de cada elemento. A diferencia de algoritmos como Bubble Sort o Quick Sort, no realiza comparaciones entre elementos.
+    \item Heap Sort:
+    Es un algoritmo de ordenamiento que utiliza una estructura de datos llamada heap (montículo). Un heap es un árbol binario completo que cumple con la propiedad de heap: cada nodo padre tiene un valor mayor (max-heap) o menor (min-heap) que sus hijos.
+    \item Merge Sort:
+    Se denomina como un algoritmo de ordenamiento que utiliza la técnica "dividir y conquistar". Divide la lista en mitades más pequeñas, las ordena recursivamente y luego combina (merge) estas sublistas ordenadas para producir una lista final ordenada.
+    \item Quick Sort
+    Es un algoritmo de clasificación basado en "dividir y conquistar" que elige un elemento como pivote y divide la matriz dada alrededor del pivote elegido colocando el pivote en su posición correcta en la matriz ordenada.
+
+\vspace{2cm}
+\end{itemize}
+
+\subsection{Implementación de algoritmos}
+\textbf{
+Bubble Sort
+}
+\begin{enumerate}
+    \item Fase de Comparación
+    \begin{itemize}
+        \item El algoritmo comienza en el primer elemento del array.
+        \item Compara elementos adyacentes (elemento actual con el siguiente).
+        \item Si el elemento actual es mayor que el siguiente, se intercambian.
+    \end{itemize}
+
+    \item Fase de Iteración
+    \begin{itemize}
+        \item Este proceso se repite para cada par de elementos adyacentes hasta el final del array.
+        \item Después de la primera pasada, el elemento más grande estará en la última posición.
+        \item Cada pasada subsiguiente excluye el último elemento, ya que está en su posición correcta.
+    \end{itemize}
+
+    \item Fase de Terminación
+    \begin{itemize}
+        \item El proceso continúa hasta que no se realizan intercambios en una pasada completa.
+        \item En este punto, el array está ordenado.
+    \end{itemize}
+\end{enumerate}
+\textbf{
+Selection Sort
+}
+\begin{enumerate}
+    \item Fase de Selección
+    \begin{itemize}
+        \item Encuentra el elemento mínimo en la sublista no ordenada.
+        \item Esta búsqueda implica examinar todos los elementos no ordenados.
+        \item Mantiene un registro de la posición del mínimo encontrado.
+    \end{itemize}
+
+    \item Fase de Intercambio
+    \begin{itemize}
+        \item Intercambia el elemento mínimo encontrado con el primer elemento de la sublista no ordenada.
+        \item Este intercambio expande la sublista ordenada y reduce la no ordenada.
+        \item Solo se realiza un intercambio por iteración.
+    \end{itemize}
+\vspace{2cm}
+
+    \item Fase de Iteración
+    \begin{itemize}
+        \item El proceso se repite para la sublista no ordenada restante.
+        \item La frontera entre las sublistas ordenada y no ordenada se mueve una posición.
+        \item Continúa hasta que la sublista no ordenada queda vacía.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{
+Insertion Sort
+}
+\begin{enumerate}
+    \item \textbf{Fase de Inicialización}
+    \begin{itemize}
+        \item Considera el primer elemento como una lista ordenada de un elemento.
+        \item Los elementos restantes forman la sección no ordenada.
+    \end{itemize}
+
+    \item \textbf{Fase de Inserción}
+    \begin{itemize}
+        \item Toma el primer elemento de la sección no ordenada.
+        \item Lo compara con cada elemento en la sección ordenada.
+        \item Desplaza los elementos mayores una posición a la derecha.
+        \item Inserta el elemento en la posición correcta.
+    \end{itemize}
+
+    \item \textbf{Fase de Iteración}
+    \begin{itemize}
+        \item Repite el proceso para cada elemento en la sección no ordenada.
+        \item La sección ordenada crece en uno con cada iteración.
+        \item Continúa hasta que la sección no ordenada está vacía.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{
+Counting Sort
+}
+\begin{enumerate}
+    \item Encontrar el rango de valores (mín y máx).
+    \item Crear un array de conteo inicializado en ceros.
+    \item Contar frecuencia de cada elemento.
+    \item Modificar array de conteo para tener posiciones acumuladas.
+    \item Construir array de salida utilizando el array de conteo.
+\end{enumerate}
+
+
+
+\textbf{
+Heap Sort
+}
+\begin{enumerate}
+    \item Construcción del Heap
+    \begin{itemize}
+        \item Se toma el arreglo de entrada y se construye un max-heap.
+        \item Esta operación tiene una complejidad de \(O(n)\).
+    \end{itemize}
+
+    \item Extracción Ordenada
+    \begin{itemize}
+        \item Se extrae repetidamente el elemento raíz (máximo).
+        \item Se coloca al final del arreglo.
+        \item Se reorganiza el heap restante.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{
+Merge Sort
+}
+\begin{enumerate}
+    \item División (Divide)
+    \begin{itemize}
+        \item Dividir recursivamente la lista en mitades hasta tener sublistas de 1 elemento.
+        \item Cada sublista de 1 elemento se considera ordenada.
+    \end{itemize}
+
+    \item Combinación (Merge)
+    \begin{itemize}
+        \item Combinar las sublistas ordenadas de manera que preserve el orden.
+        \item Comparar elementos de las sublistas y fusionarlos en orden ascendente.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{
+Quick Sort
+}
+\begin{enumerate}
+    \item Elegir un pivote
+    \begin{itemize}
+    \item seleccione un elemento de la matriz como pivote. La elección del pivote puede variar (por ejemplo, primer elemento, último elemento, elemento aleatorio o mediana).
+    \end{itemize}
+
+    \item Dividir la matriz
+    \begin{itemize}
+    \item reordene la matriz alrededor del pivote. Después de la partición, todos los elementos más pequeños que el pivote estarán a su izquierda y todos los elementos más grandes que el pivote estarán a su derecha. El pivote estará entonces en su posición correcta y obtenemos el índice del pivote.
+    \end{itemize}
+
+    \item Llamada recursiva
+    \begin{itemize}
+    \item aplique recursivamente el mismo proceso a las dos submatrices particionadas (izquierda y derecha del pivote).
+    \end{itemize}
+\end{enumerate}
+
+\vspace{5cm}
+\subsection{Evaluación de los algoritmos}
+
+
+\begin{table}[htbp]
+    \centering
+    \small % Cambia el tamaño de la fuente para ajustar
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Caso} & \textbf{Complejidad Temporal} \\
+        \hline
+        Mejor caso & O(n) (cuando el array ya está ordenado) \\
+        \hline
+        Caso promedio & O(n²) \\
+        \hline
+        Peor caso & O(n²) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad temporal de Bubble Sort}
+    \label{tab:complejidad}
+\end{table}
+
+
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Descripción} & \textbf{Características} \\
+        \hline
+        O(1) & Solo requiere espacio adicional constante \\
+        \hline
+        In-place algorithm & Ordena en el mismo espacio de memoria \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad espacial de Bubble Sort}
+    \label{tab:complejidad_espacial}
+\end{table}
+
+Bubble Sort no es considerado un algoritmo efectivo para la mayoría de las aplicaciones debido a su alta complejidad temporal de \(O(n^2\) en el caso promedio y en el peor caso. Su rendimiento se degrada rápidamente a medida que aumenta el tamaño del array, lo que lo hace poco práctico para listas grandes. Además, realiza muchas comparaciones innecesarias, incluso cuando la lista ya está casi ordenada, y carece de adaptabilidad. Aunque se pueden implementar algunas mejoras, como añadir una bandera que indique si se realizaron intercambios durante una pasada para terminar la ejecución anticipadamente, sería más eficiente utilizar algoritmos más avanzados como Quick Sort, Merge Sort o Heap Sort, que ofrecen mejores complejidades temporales. En resumen, aunque Bubble Sort puede ser útil para fines educativos o para listas pequeñas, en aplicaciones prácticas es recomendable optar por algoritmos más eficientes.
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Caso} & \textbf{Complejidad Temporal} \\
+        \hline
+        Mejor caso & O(n²) \\
+        \hline
+        Caso promedio & O(n²) \\
+        \hline
+        Peor caso & O(n²) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad temporal en Selection Sort}
+    \label{tab:complejidad_casos_uniforme}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Descripción} & \textbf{Características} \\
+        \hline
+        O(1) & Espacio auxiliar constante \\
+        \hline
+        In-place algorithm & Ordena en el espacio original \\
+        \hline
+    \end{tabular}
+    \caption{Características de la complejidad espacial de Selection Sort}
+    \label{tab:caracteristicas_espacial}
+\end{table}
+
+\vspace{5cm}
+Selection Sort es un algoritmo de ordenación simple, pero tampoco es muy eficiente para listas grandes debido a su complejidad temporal de \(O(n^2)\) en todos los casos (mejor, promedio y peor). A pesar de su simplicidad y facilidad de implementación, su rendimiento se ve afectado por la cantidad de comparaciones y movimientos necesarios. Selection Sort selecciona repetidamente el elemento más pequeño de la parte no ordenada y lo intercambia con el primer elemento no ordenado. Esto resulta en un número fijo de intercambios, lo que puede ser ventajoso en ciertas situaciones donde las operaciones de intercambio son costosas. Sin embargo, su ineficiencia en términos de comparaciones lo hace menos adecuado para listas grandes. Para mejorar su rendimiento, se podría considerar el uso de algoritmos más eficientes, como Quick Sort o Merge Sort, que tienen complejidades temporales significativamente mejores. En resumen, aunque Selection Sort puede ser útil para listas pequeñas o para fines educativos, no es recomendable para aplicaciones prácticas donde el rendimiento es crucial.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Caso} & \textbf{Complejidad Temporal} \\
+        \hline
+        Mejor caso & O(n) (cuando el array está casi ordenado) \\
+        \hline
+        Caso promedio & O(n²) \\
+        \hline
+        Peor caso & O(n²) (cuando el array está invertido) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad temporal en Insertion Sort}
+    \label{tab:complejidad_casos}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Descripción} & \textbf{Características} \\
+        \hline
+        O(1) & Espacio auxiliar constante \\
+        \hline
+        In-place algorithm & Ordena en el espacio original \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad espacial en Insertion Sort}
+    \label{tab:caracteristicas_espacial}
+\end{table}
+
+Insertion Sort es un algoritmo de ordenación que se considera más eficiente que Bubble Sort y Selection Sort, especialmente para listas pequeñas o casi ordenadas. Su complejidad temporal es \(O(n^2)\) en el peor y promedio de los casos, pero mejora a \(O(n)\) en el mejor caso, que ocurre cuando la lista ya está ordenada. El algoritmo funciona construyendo una sublista ordenada y, en cada iteración, toma un elemento de la parte no ordenada y lo inserta en la posición correcta de la sublista. 
+
+Una de las principales ventajas de Insertion Sort es su adaptabilidad: es bastante eficiente en listas que ya están casi ordenadas, lo que lo hace adecuado para ciertas aplicaciones. Además, es un algoritmo estable, lo que significa que preserva el orden relativo de los elementos iguales. Sin embargo, su ineficiencia en listas grandes lo limita en comparación con algoritmos más avanzados como Quick Sort o Merge Sort. Para mejorar su rendimiento, se podría considerar el uso de Insertion Sort en conjunción con otros algoritmos en un enfoque híbrido, donde se utiliza Insertion Sort para listas más pequeñas después de aplicar un algoritmo más eficiente en listas grandes. En resumen, Insertion Sort es útil para listas pequeñas o casi ordenadas, pero para aplicaciones más exigentes, es mejor optar por algoritmos más eficientes.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Caso} & \textbf{Complejidad Temporal} \\
+        \hline
+        Mejor caso & O(n + k) \\
+        \hline
+        Caso promedio & O(n + k) \\
+        \hline
+        Peor caso & O(n + k) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad temporal en Counting Sort}
+    \label{tab:complejidad_rango}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Descripción} & \textbf{Complejidad Temporal} \\
+        \hline
+        Array de conteo & O(k) \\
+        \hline
+        Array de salida & O(n) \\
+        \hline
+        \textbf{Total} & O(n + k) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad temporal de Counting Sort}
+    \label{tab:complejidad_total}
+\end{table}
+
+Counting Sort es un algoritmo de ordenación no comparativo que es especialmente eficiente para ordenar listas de enteros en un rango conocido. Su complejidad temporal es \(O(n + k)\), donde \(n\) es el número de elementos en la lista y \(k\) es el rango de valores posibles. Esto lo convierte en una opción muy eficiente cuando el rango \(k\) no es significativamente mayor que el número de elementos \(n\).
+
+Una de las principales ventajas de Counting Sort es su capacidad para manejar grandes volúmenes de datos de manera rápida, ya que evita las comparaciones directas entre elementos. Funciona contando la ocurrencia de cada valor en la lista y luego utilizando esa información para determinar la posición de cada elemento en la lista ordenada. Es un algoritmo estable, lo que significa que mantiene el orden relativo de los elementos iguales, lo que puede ser crucial en ciertos contextos.
+
+Sin embargo, Counting Sort tiene limitaciones. No es adecuado para listas con valores negativos a menos que se realicen transformaciones, y su uso se restringe a datos enteros o discretos, lo que limita su aplicabilidad en contextos más generales. Para mejorar su uso, se podría considerar combinarlo con otros algoritmos de ordenación para manejar conjuntos de datos más complejos o cuando se requiere ordenación en múltiples dimensiones. En resumen, Counting Sort es muy eficaz para listas de enteros en rangos limitados, pero su aplicabilidad es más restringida en comparación con algoritmos de ordenación más generales.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Caso} & \textbf{Complejidad Temporal} \\
+        \hline
+        Todos los casos & O(n log n) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad temporal en Heap Sort}
+    \label{tab:complejidad_todos_casos}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Descripción} & \textbf{Complejidad Espacial} \\
+        \hline
+        Espacio & O(1) (ya que es in-place) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad espacial de Heap Sort}
+    \label{tab:complejidad_espacial_in_place}
+\end{table}
+\vspace{2cm}
+Heap Sort es un algoritmo de ordenación eficiente que utiliza la estructura de datos de un heap (montículo) para ordenar elementos. Su complejidad temporal es \(O(n \log n)\) en todos los casos (mejor, promedio y peor), lo que lo convierte en una opción atractiva para ordenar listas grandes. El algoritmo funciona construyendo un heap a partir de los elementos de la lista y luego extrayendo repetidamente el elemento máximo (o mínimo, dependiendo del tipo de heap) para construir la lista ordenada.
+
+Una de las principales ventajas de Heap Sort es su eficiencia y su capacidad para ordenar en el lugar, ya que requiere solo un espacio adicional de \(O(1)\). Además, como es un algoritmo no recursivo, evita problemas de desbordamiento de pila que pueden ocurrir con algoritmos recursivos en listas grandes.
+
+Sin embargo, Heap Sort no es estable, lo que significa que no preserva el orden relativo de los elementos iguales. Además, en comparación con otros algoritmos de ordenación como Quick Sort o Merge Sort, Heap Sort puede tener un rendimiento más lento en la práctica debido a las constantes ocultas y la naturaleza de las operaciones de heap. 
+
+Para mejorar su rendimiento, se podría considerar su uso en situaciones donde la estabilidad no es un requisito y donde se prefiere un algoritmo con una complejidad temporal garantizada. En resumen, Heap Sort es una opción robusta para ordenar listas grandes, especialmente cuando se requieren garantías de rendimiento y se puede sacrificar la estabilidad.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Descripción} & \textbf{Características} \\
+        \hline
+        Tiempo & O(n log n) en todos los casos \\
+        \hline
+        Espacio & O(n) (espacio adicional necesario) \\
+        \hline
+        Estable & Sí (mantiene el orden relativo de elementos iguales) \\
+        \hline
+    \end{tabular}
+    \caption{Características del algoritmo Merge Sort}
+    \label{tab:caracteristicas_algoritmo}
+\end{table}
+
+Merge Sort es un algoritmo de ordenación eficiente y estable que utiliza el enfoque de "divide y vencerás". Su complejidad temporal es \(O(n \log n)\) en todos los casos (mejor, promedio y peor), lo que lo convierte en una opción confiable para ordenar listas grandes. El algoritmo funciona dividiendo repetidamente la lista en mitades hasta que cada sublista contiene un solo elemento. Luego, fusiona estas sublistas de manera ordenada para producir una lista completamente ordenada.
+
+Una de las principales ventajas de Merge Sort es su estabilidad, lo que significa que preserva el orden relativo de los elementos iguales. Además, es muy eficiente para listas grandes y puede manejar listas enlazadas de manera efectiva. Otra característica importante es que, a diferencia de algunos algoritmos de ordenación, Merge Sort no está limitado por la distribución de los datos, lo que lo hace consistente en su rendimiento.
+
+Sin embargo, Merge Sort requiere espacio adicional de \(O(n)\) para almacenar las sublistas durante el proceso de fusión, lo que puede ser un inconveniente en entornos con recursos limitados. Aunque es un algoritmo muy eficiente, su uso puede no ser ideal en situaciones donde se necesita un algoritmo in-place o donde la memoria es una preocupación.
+
+Para mejorar su uso, Merge Sort se puede combinar con otros algoritmos, como Insertion Sort, para listas pequeñas, lo que puede aumentar su eficiencia en ciertas circunstancias. En resumen, Merge Sort es un algoritmo de ordenación robusto y confiable que es ideal para listas grandes y en situaciones donde se requiere estabilidad, a pesar de su necesidad de espacio adicional.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Caso} & \textbf{Complejidad Temporal} \\
+        \hline
+        Mejor caso & (n log n) (cuando el pivote divide la matriz en dos mitades iguales) \\
+        \hline
+        Caso promedio & (n log n) (el pivote divide la matriz en partes no necesariamente iguales) \\
+        \hline
+        Peor caso & O(n²) (cuando se elige el elemento más pequeño o más grande como pivote) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad temporal del Quick Sort}
+    \label{tab:complejidad_temporal}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Descripción} & \textbf{Complejidad Espacial} \\
+        \hline
+        Espacio auxiliar & O(n) (debido a la pila de llamadas recursivas) \\
+        \hline
+    \end{tabular}
+    \caption{Complejidad espacial del algoritmo Quick Sort}
+    \label{tab:complejidad_espacial}
+\end{table}
+
+Quick Sort es un algoritmo de ordenación muy popular y eficiente que utiliza el enfoque de "divide y vencerás". Su complejidad temporal promedio es \(O(n \log n)\), aunque su peor caso es \(O(n^2)\), que ocurre cuando el pivote se elige de manera ineficiente, como al seleccionar siempre el elemento más pequeño o más grande en listas ya ordenadas o casi ordenadas. Sin embargo, con una buena elección del pivote (por ejemplo, usando el método de "median of three" o seleccionando aleatoriamente), Quick Sort tiende a funcionar muy bien en la práctica.
+
+El algoritmo funciona dividiendo la lista en sublistas a partir de un pivote, donde todos los elementos menores que el pivote se colocan a su izquierda y los mayores a su derecha. Luego, se aplica recursivamente el mismo proceso a las sublistas. Una de las principales ventajas de Quick Sort es que es un algoritmo in-place, lo que significa que requiere solo un espacio adicional \(O(\log n)\) para la pila de recursión, lo que lo hace muy eficiente en términos de uso de memoria.
+
+Quick Sort también es rápido en la práctica debido a su bajo número de intercambios y comparaciones en comparación con otros algoritmos de ordenación, como Bubble Sort o Selection Sort. Sin embargo, no es estable, lo que significa que no mantiene el orden relativo de los elementos iguales, lo que puede ser un inconveniente en algunas aplicaciones.
+
+Para mejorar su rendimiento, es recomendable utilizar una buena estrategia de selección de pivote y considerar la posibilidad de realizar una optimización híbrida, como cambiar a Insertion Sort para listas pequeñas. En resumen, Quick Sort es un algoritmo de ordenación muy eficiente y versátil que es ideal para listas grandes, aunque es importante tener en cuenta su potencial para un rendimiento deficiente en el peor caso.
